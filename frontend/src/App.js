@@ -3,7 +3,7 @@ import "@/App.css";
 import axios from "axios";
 import { Database, Send, Terminal, Clock, Trash2, Layers, Zap, Search, Table2, Hash, ChevronRight } from "lucide-react";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
 const API = `${BACKEND_URL}/api`;
 
 const SUGGESTIONS = [
@@ -14,41 +14,6 @@ const SUGGESTIONS = [
   { text: "Find products in Electronics category with rating above 4", icon: <Search size={16} /> },
   { text: "Show orders shipped to USA", icon: <Table2 size={16} /> },
 ];
-
-// Schema field definitions for sidebar display
-const SCHEMA_FIELDS = {
-  users: [
-    { name: "user_id", type: "string" },
-    { name: "name", type: "string" },
-    { name: "email", type: "string" },
-    { name: "role", type: "enum" },
-    { name: "department", type: "string" },
-    { name: "is_active", type: "boolean" },
-    { name: "created_at", type: "datetime" },
-    { name: "last_login", type: "datetime" },
-  ],
-  orders: [
-    { name: "order_id", type: "string" },
-    { name: "user_id", type: "ref" },
-    { name: "items", type: "array" },
-    { name: "total_amount", type: "number" },
-    { name: "status", type: "enum" },
-    { name: "payment_method", type: "enum" },
-    { name: "shipping_address", type: "object" },
-    { name: "created_at", type: "datetime" },
-  ],
-  products: [
-    { name: "product_id", type: "string" },
-    { name: "name", type: "string" },
-    { name: "price", type: "number" },
-    { name: "category", type: "enum" },
-    { name: "stock", type: "integer" },
-    { name: "rating", type: "number" },
-    { name: "tags", type: "array" },
-    { name: "supplier", type: "string" },
-    { name: "is_available", type: "boolean" },
-  ],
-};
 
 function ResultsTable({ data }) {
   if (!data || data.length === 0) return null;
@@ -163,7 +128,7 @@ function Sidebar({ schema, history, activeCollection, setActiveCollection, onHis
 
       <div className="sidebar-section">
         <div className="sidebar-section-title">Schema</div>
-        {Object.entries(SCHEMA_FIELDS).map(([name, fields]) => (
+        {Object.entries(schema?.schema || {}).map(([name, collectionInfo]) => (
           <div
             key={name}
             className={`schema-collection ${activeCollection === name ? "active" : ""}`}
@@ -178,10 +143,10 @@ function Sidebar({ schema, history, activeCollection, setActiveCollection, onHis
               {schema?.counts?.[name] ?? 0} documents
             </div>
             <div className="schema-fields">
-              {fields.map((f) => (
-                <div key={f.name} className="schema-field" data-testid={`schema-field-${name}-${f.name}`}>
-                  <span className="field-name">{f.name}</span>
-                  <span className="field-type">{f.type}</span>
+              {Object.entries(collectionInfo.fields || {}).map(([fieldName, fieldType]) => (
+                <div key={fieldName} className="schema-field" data-testid={`schema-field-${name}-${fieldName}`}>
+                  <span className="field-name">{fieldName}</span>
+                  <span className="field-type">{fieldType}</span>
                 </div>
               ))}
             </div>

@@ -1,0 +1,1621 @@
+INFO:     Will watch for changes in these directories: ['/Users/arunchaudhary/Github/LinguaQuery/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [75885] using StatReload
+INFO:     Started server process [75888]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:52456 - "GET /api/schema HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+INFO:     127.0.0.1:52457 - "GET /api/history?limit=15 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+INFO:     127.0.0.1:52653 - "GET /api/history?limit=15 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+INFO:     127.0.0.1:52652 - "GET /api/schema HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+INFO:     127.0.0.1:52957 - "OPTIONS /api/query HTTP/1.1" 200 OK
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+INFO:     127.0.0.1:52954 - "GET /api/history?limit=15 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+INFO:     127.0.0.1:52953 - "GET /api/schema HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 231, in get_schema
+    schema_def = await get_dynamic_schema()
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 32, in get_dynamic_schema
+    collections = await db.list_collection_names()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1149, in list_collection_names
+    return [result["name"] for result in self.list_collections(session=session, **kwargs)]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/database.py", line 1101, in list_collections
+    return self.__client._retryable_read(_cmd, read_pref, session)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/_csot.py", line 108, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1525, in _retryable_read
+    server = self._select_server(read_pref, session, address=address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1297, in _select_server
+    server = topology.select_server(server_selector)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 312, in select_server
+    server = self._select_server(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 296, in _select_server
+    servers = self.select_servers(selector, server_selection_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 247, in select_servers
+    server_descriptions = self._select_servers_loop(selector, server_timeout, address)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+2026-04-13 23:49:28,617 - server - ERROR - Query processing error: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+INFO:     127.0.0.1:52957 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52957 - "GET /api/history?limit=15 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/arunchaudhary/Github/LinguaQuery/backend/server.py", line 342, in get_history
+    history = await db.query_history.find(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/motor/core.py", line 1657, in _to_list
+    result = get_more_result.result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/cursor.py", line 1153, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1868, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/mongo_client.py", line 1811, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 583, in _check_implicit_session_support
+    self._check_session_support()
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 599, in _check_session_support
+    self._select_servers_loop(
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/pymongo/topology.py", line 269, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 69dd2b7642129e55fb186bbe, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 61] Connection refused')>]>
+WARNING:  StatReload detected changes in 'server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [75888]
+INFO:     Started server process [85262]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

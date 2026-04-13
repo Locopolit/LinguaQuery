@@ -1,0 +1,27 @@
+INFO:     Will watch for changes in these directories: ['/Users/arunchaudhary/Github/LinguaQuery/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [85318] using StatReload
+INFO:     Started server process [85321]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53173 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53172 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53172 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53173 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53173 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53172 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53172 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53173 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53173 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53172 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53172 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53173 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53172 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53172 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53227 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53227 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53239 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53239 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
