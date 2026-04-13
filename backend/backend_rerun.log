@@ -1,0 +1,19 @@
+INFO:     Will watch for changes in these directories: ['/Users/khushbookumari/Github/LinguaQuery/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [60948] using StatReload
+INFO:     Started server process [60950]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:56546 - "POST /api/auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:56558 - "OPTIONS /api/auth/register HTTP/1.1" 200 OK
+WARNING:passlib.handlers.bcrypt:(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/khushbookumari/Github/LinguaQuery/backend/venv/lib/python3.9/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     127.0.0.1:56558 - "POST /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56560 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56560 - "OPTIONS /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56560 - "OPTIONS /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56569 - "GET /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56568 - "GET /api/schema HTTP/1.1" 200 OK

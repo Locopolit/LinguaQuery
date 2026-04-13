@@ -163,7 +163,7 @@ function QueryPreview({ query }) {
     <div className="query-preview">
       <div className="query-preview-header">
         <Terminal size={12} />
-        SQL Query
+        MongoDB Query
       </div>
       <div className="query-preview-code">{query.sql}</div>
     </div>
@@ -274,7 +274,7 @@ function WelcomeState({ onSuggestionClick }) {
     <div className="welcome-state">
       <div className="welcome-icon"><Database size={36} /></div>
       <h1 className="welcome-title">Ask your database anything</h1>
-      <p className="welcome-subtitle">Type a question in plain English and AskBase will generate and execute PostgreSQL for you.</p>
+      <p className="welcome-subtitle">Type a question in plain English and AskBase will generate and execute MongoDB queries for you.</p>
       <div className="suggestion-grid">
         {SUGGESTIONS.map((s, i) => (
           <div key={i} className="suggestion-card" onClick={() => onSuggestionClick(s.text)}>
@@ -380,7 +380,7 @@ function App() {
           <div className="chat-header">
             <div className="chat-header-title">
               <span className="status-dot online" style={{ marginRight: 8 }} />
-              Connected to PostgreSQL
+              Connected to MongoDB
             </div>
           </div>
           <div className="chat-messages">

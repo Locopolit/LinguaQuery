@@ -1,0 +1,31 @@
+zsh:1: command not found: npm
+
+> frontend@0.1.0 start
+> craco start
+
+(node:61002) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:61002) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:61002) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+(node:61002) [DEP_WEBPACK_COMPILATION_ASSETS] DeprecationWarning: Compilation.assets will be frozen in future, all modifications are deprecated.
+BREAKING CHANGE: No more changes should happen to Compilation.assets after sealing the Compilation.
+	Do changes to assets earlier, e. g. in Compilation.hooks.processAssets.
+	Make sure to select an appropriate stage from Compilation.PROCESS_ASSETS_STAGE_*.
+Compiled with warnings.
+
+[eslint] 
+src/App.js
+  Line 310:6:  React Hook useCallback has a missing dependency: 'apiHeaders'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 320:6:  React Hook useCallback has a missing dependency: 'apiHeaders'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/App.js
+  Line 310:6:  React Hook useCallback has a missing dependency: 'apiHeaders'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 320:6:  React Hook useCallback has a missing dependency: 'apiHeaders'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
