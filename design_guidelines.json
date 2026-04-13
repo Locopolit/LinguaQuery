@@ -1,0 +1,99 @@
+{
+  "project_name": "AskBase",
+  "app_type": "hybrid_fullstack",
+  "theme": "Dark",
+  "archetype": "5 (Jewel & Luxury) - Adapted for High-End Developer Tools",
+  "core_philosophy": "Provide a premium, precise, and transparent 'control room' experience for database querying using Glassmorphism over a dark, moody background.",
+  "color_palette": {
+    "background_base": "#050814",
+    "background_glass": "rgba(255, 255, 255, 0.03)",
+    "border_glass": "rgba(255, 255, 255, 0.08)",
+    "text_primary": "#F8FAFC",
+    "text_secondary": "#94A3B8",
+    "accent_primary": "#F59E0B",
+    "accent_hover": "#D97706",
+    "danger": "#EF4444",
+    "success": "#10B981"
+  },
+  "typography": {
+    "headings": {
+      "family": "Outfit",
+      "weights": ["300", "500"],
+      "tracking": "tracking-tight",
+      "instruction": "Use Outfit for all Headings (H1-H6). Do NOT use Inter, Space Grotesk, Roboto, or generic sans-serif fonts for headings."
+    },
+    "body": {
+      "family": "Work Sans",
+      "weights": ["400", "500"],
+      "instruction": "Use Work Sans for all standard body text, buttons, and UI labels."
+    },
+    "monospace": {
+      "family": "JetBrains Mono",
+      "weights": ["400"],
+      "instruction": "Use JetBrains Mono exclusively for generated MongoDB queries, JSON output, and schema definitions."
+    }
+  },
+  "layout_and_spacing": {
+    "grid_system": "Control Room Bento Grid. 1-col on mobile, 12-col on desktop. Sidebar spans 3 cols, main chat/results spans 9 cols.",
+    "generous_spacing": "Use p-6 or p-8 inside glass panels to prevent text from colliding with borders. Increase gap between sections to gap-8 or gap-12.",
+    "optical_alignment": "Left-align dense content like queries and schema lists. Center-align empty states or welcome messages."
+  },
+  "glassmorphism_rules": {
+    "base_panels": "bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]",
+    "interactive_cards": "bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300",
+    "floating_headers_modals": "backdrop-saturate-150 backdrop-blur-3xl bg-black/60 border border-white/10",
+    "text_contrast": "Ensure text over glass panels uses bright, high-contrast colors (like #F8FAFC) to remain readable against complex backgrounds."
+  },
+  "components": [
+    {
+      "name": "Sidebar (Schema Viewer & History)",
+      "styling": "Fixed left sidebar using 'base_panels' glassmorphism. Use subtle dividing lines (border-white/5) between schema collections.",
+      "data_testid": "sidebar-container"
+    },
+    {
+      "name": "Chat Interface",
+      "styling": "Main central area. User messages are right-aligned with amber accent background (bg-amber-500/20 text-amber-50 border border-amber-500/30). AI responses are left-aligned using 'base_panels'.",
+      "data_testid": "chat-interface"
+    },
+    {
+      "name": "Query Input Field",
+      "styling": "A floating glass input at the bottom. bg-black/40 backdrop-blur-xl border border-white/10 rounded-full px-6 py-4 text-white focus:ring-2 focus:ring-amber-500/50 outline-none.",
+      "data_testid": "query-input"
+    },
+    {
+      "name": "Query Results Display (Tables)",
+      "styling": "Rendered inside the chat as a glass card. Table headers are text-xs uppercase tracking-[0.2em] text-slate-400. Rows have subtle border-b border-white/5.",
+      "data_testid": "query-results-table"
+    },
+    {
+      "name": "Generated MongoDB Query Preview",
+      "styling": "A dedicated dark glass block within the AI response. bg-black/60 border border-white/10 p-4 rounded-xl font-mono text-sm text-green-400 overflow-x-auto.",
+      "data_testid": "mongo-query-preview"
+    }
+  ],
+  "media": {
+    "background_image": {
+      "url": "https://images.pexels.com/photos/6243498/pexels-photo-6243498.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Abstract bright orange shining lights behind blurred window in darkness. Set this as the absolute positioned, full-screen background object with a dark overlay (bg-black/60) to let the glassmorphism panels refract the glowing orange and dark tones."
+    }
+  },
+  "icons": {
+    "library": "lucide-react",
+    "instruction": "Use lucide-react (already installed). Keep icons minimalist with stroke-width 1.5. Tint icons to match the text color (e.g., text-slate-400 or text-amber-500)."
+  },
+  "animations": {
+    "hover": "transform transition-transform duration-200 hover:-translate-y-1",
+    "entrance": "Staggered fade-in for chat messages. Use simple opacity/transform transitions.",
+    "button_click": "active:scale-95 transition-transform"
+  },
+  "testing": {
+    "instruction": "All interactive and key informational elements MUST include a 'data-testid' attribute using kebab-case role-based naming (e.g., 'submit-query-button', 'schema-collection-item', 'chat-message-ai')."
+  },
+  "instructions_to_main_agent": [
+    "Install specific fonts via Google Fonts in index.css: Outfit, Work Sans, JetBrains Mono.",
+    "Do NOT use HTML native date/select inputs. Use custom UI or shadcn equivalents if needed, but styling must adhere strictly to the glassmorphism rules provided.",
+    "Place the 'background_image' from media behind the entire application with a fixed, cover positioning and an overlay of bg-black/60.",
+    "Apply 'data-testid' to EVERYTHING interactive: sidebar, chat messages, input form, table rows.",
+    "Ensure 'glassmorphism_rules' are applied to major layout blocks (Sidebar, Chat Area, Results Card)."
+  ]
+}
