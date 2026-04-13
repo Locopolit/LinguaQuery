@@ -1,0 +1,35 @@
+INFO:     Will watch for changes in these directories: ['/Users/arunchaudhary/Github/LinguaQuery/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [93193] using StatReload
+INFO:     Started server process [93196]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53704 - "OPTIONS /api/auth/register HTTP/1.1" 200 OK
+WARNING:passlib.handlers.bcrypt:(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/arunchaudhary/Library/Python/3.9/lib/python/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     127.0.0.1:53704 - "POST /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "OPTIONS /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53709 - "OPTIONS /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53709 - "GET /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53708 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53711 - "OPTIONS /api/query HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53711 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53711 - "GET /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53745 - "GET /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53744 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53747 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53748 - "GET /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53747 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53751 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53751 - "GET /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53779 - "GET /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53778 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53783 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53787 - "GET /api/history?limit=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53783 - "GET /api/schema HTTP/1.1" 200 OK

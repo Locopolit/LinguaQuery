@@ -25,3 +25,45 @@ INFO:     127.0.0.1:53227 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
 INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
 INFO:     127.0.0.1:53239 - "POST /api/query HTTP/1.1" 200 OK
 INFO:     127.0.0.1:53239 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53270 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53272 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53275 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53272 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53279 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53279 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53299 - "OPTIONS /api/query HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53299 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53299 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53386 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53389 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53386 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53386 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53389 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53405 - "OPTIONS /api/query HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53405 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53405 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53439 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53585 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53585 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53590 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53585 - "GET /api/schema HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53597 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53597 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+INFO:httpx:HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:53602 - "POST /api/query HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53602 - "GET /api/history?limit=15 HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [85321]
+INFO:     Started server process [92971]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
